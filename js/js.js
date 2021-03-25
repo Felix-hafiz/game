@@ -16,7 +16,7 @@ const tamanAnak = "/bg/taman-anak.png";
 function gantiScene(scene){
 
     let gambar = scene
-    const local = "http://127.0.0.1:5500"
+    const local = "https://felix-hafiz.github.io/game"
 
     // cek di kamar, hilangin button start + munculin button opsi
     let startCheck = btnStart.style.display = 'none'
