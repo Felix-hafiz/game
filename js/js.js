@@ -4,9 +4,9 @@ let btnTaman = document.querySelector('.btn-taman');
 let btnTamanAnak = document.querySelector('.btn-taman-anak');
 let dialog = document.querySelector('.dialog');
 console.log("nyari apa?")
-const kamar = "url(/bg/kamar.png)";
-const taman = "url(/bg/taman.png)";
-const tamanAnak = "url(/bg/taman-anak.png)";
+const kamar = "url(bg/kamar.png)";
+const taman = "url(bg/taman.png)";
+const tamanAnak = "url(bg/taman-anak.png)";
 
 
 
