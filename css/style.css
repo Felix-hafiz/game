@@ -9,7 +9,7 @@
   width: 100vw;
   height: 100vh;
   background-color: lightgray;
-  background-image: url(/bg/start.png);
+  background-image: url(bg/start.png);
   background-size: cover;
 
   display: flex;
