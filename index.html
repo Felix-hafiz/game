@@ -12,13 +12,17 @@
 <body>
     <div class="container">
 
+        <div class="bg">
+            <img src="bg/start.png" id="img-bg">
+        </div>
+
         <div class="button">
 
-            <button type="button" id="btn-start">start</button>
+            <button type="button" id="btn-start" onclick="gantiScene(kamar)">start</button>
 
             <div class="menu-kamar">
-                <button class="btn-taman hidden">Pergi lewat Taman</button>
-                <button class="btn-taman-anak hidden">Pergi lewat Taman anak</button>
+                <button class="btn-taman hidden" onclick="gantiScene(taman)">Pergi lewat Taman</button>
+                <button class="btn-taman-anak hidden" onclick="gantiScene(tamanAnak)">Pergi lewat Taman anak</button>
             </div>
             
         </div>
@@ -26,7 +30,7 @@
 
         <!-- dialog -->
         <div class="dialog hidden">
-            <p>tes dialog</p>
+            <p>dialog</p>
         </div>
 
     </div>
