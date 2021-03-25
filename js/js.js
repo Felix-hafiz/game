@@ -1,62 +1,42 @@
 let btnStart = document.getElementById("btn-start");
-let bg = document.querySelector('.container');
 let btnTaman = document.querySelector('.btn-taman');
 let btnTamanAnak = document.querySelector('.btn-taman-anak');
 let dialog = document.querySelector('.dialog');
+let img = document.getElementById("img-bg")
 console.log("nyari apa?")
-const kamar = "url(bg/kamar.png)";
-const taman = "url(bg/taman.png)";
-const tamanAnak = "url(bg/taman-anak.png)";
+
+const kamar = '/bg/kamar.png';
+const taman = '/bg/taman.png';
+const tamanAnak = "/bg/taman-anak.png";
 
 
 
 
-// gantiScene( "url('/bg/kamar.png')");
+// ganti bacground
+function gantiScene(scene){
 
-btnStart.addEventListener("click",function(){
+    let gambar = scene
+    const local = "http://127.0.0.1:5500"
 
-    bg.style.backgroundImage = kamar;
+    // cek di kamar, hilangin button start + munculin button opsi
+    let startCheck = btnStart.style.display = 'none'
+    if(startCheck){
+        btnTaman.classList.toggle("hidden")
+        btnTamanAnak.classList.toggle("hidden")
+    }
 
-    btnStart.style.display = 'none';
+    img.src = gambar;
 
- 
+    switch (img.src){
+        case local + kamar :
+            dialog.classList.toggle("hidden")
+            return dialog.innerHTML = "Astaga aku sudah terlambat! aku harus kesekolah lewat jalan pintas!";
 
-
-        btnTaman.style.display = 'block';
-        btnTamanAnak.style.display = 'block';
-        dialog.style.display = 'block';
-
-        // dialog
-             // cek di scene kamar
-                if(bg.style.backgroundImage = kamar){
-                    dialog.innerHTML = 'Ya ammpun aku sudah kesiangan, aku harus segera pergi ke sekolah!!!!';
-                };
-            
-    
-
-},true);
-
-btnTaman.addEventListener("click",function(){
-    bg.style.backgroundImage = taman;
-    btnTaman.style.display = 'none';
-        btnTamanAnak.style.display = 'none';
-
-        // cek di scene taman
-
-            dialog.innerHTML = 'Dia Yanti yang ada disebelah kelas ku kan? Apa yang dia lakukan disini??';
- 
-});
-
-btnTamanAnak.addEventListener("click",function(){
-    bg.style.backgroundImage = tamanAnak;
-    btnTaman.style.display = 'none';
-        btnTamanAnak.style.display = 'none';
-
-         // cek di scene taman anak
-      
-            dialog.innerHTML = 'anak kecil itu lucu yah, semoga dia cepat besar :)';
-
-});
-
-
-
+        case local + taman :
+            return dialog.innerHTML = "itu sumarni kan? murid kelas sebelah ku....";
+         
+        case local + tamanAnak :
+            return dialog.innerHTML = "wah ada yanti, semoga dia cepat besar dan lulus sekolah :)";
+           
+    }
+}
