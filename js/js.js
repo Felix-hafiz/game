@@ -5,9 +5,9 @@ let dialog = document.querySelector('.dialog');
 let img = document.getElementById("img-bg")
 console.log("nyari apa?")
 
-const kamar = '/bg/kamar.png';
-const taman = '/bg/taman.png';
-const tamanAnak = "/bg/taman-anak.png";
+const kamar = '../bg/kamar.png';
+const taman = '../bg/taman.png';
+const tamanAnak = "../bg/taman-anak.png";
 
 
 
@@ -16,7 +16,6 @@ const tamanAnak = "/bg/taman-anak.png";
 function gantiScene(scene){
 
     let gambar = scene
-    const local = "http://127.0.0.1:5500"
 
     // cek di kamar, hilangin button start + munculin button opsi
     let startCheck = btnStart.style.display = 'none'
@@ -26,16 +25,15 @@ function gantiScene(scene){
     }
 
     img.src = gambar;
-
-    switch (img.src){
-        case local + kamar :
+    switch (img.getAttributeNode("src").value){
+        case kamar :
             dialog.classList.toggle("hidden")
             return dialog.innerHTML = "Astaga aku sudah terlambat! aku harus kesekolah lewat jalan pintas!";
 
-        case local + taman :
+        case taman :
             return dialog.innerHTML = "itu sumarni kan? murid kelas sebelah ku....";
          
-        case local + tamanAnak :
+        case tamanAnak :
             return dialog.innerHTML = "wah ada yanti, semoga dia cepat besar dan lulus sekolah :)";
            
     }
